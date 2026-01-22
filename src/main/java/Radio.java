@@ -30,15 +30,23 @@ public class Radio {
         return currentRadioStationNumber;
     }
 
-    public void setCurrentRadioStationNumber(int newCurrentRadioStationNumber) {
+    public void setNext(int newCurrentRadioStationNumber) {
         currentRadioStationNumber = newCurrentRadioStationNumber;
 
         if (currentRadioStationNumber > 9) {
             currentRadioStationNumber = 0;
-        } else {currentRadioStationNumber = currentRadioStationNumber;
-            }
+        } else {
+            currentRadioStationNumber = currentRadioStationNumber;
+        }
+    }
+
+    public void setPrev(int newCurrentRadioStationNumber) {
+        currentRadioStationNumber = newCurrentRadioStationNumber;
+
         if (currentRadioStationNumber < 0) {
             currentRadioStationNumber = 9;
+        } else {
+            currentRadioStationNumber = currentRadioStationNumber;
         }
     }
 }
