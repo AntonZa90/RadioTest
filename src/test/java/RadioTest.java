@@ -3,38 +3,38 @@ import org.junit.jupiter.api.Test;
 
 public class RadioTest {
     @Test
-    public void increaseVolume() {
+    public void increaseVolumeOne() {
         Radio radio = new Radio();
-        radio.setCurrentVolume(15);
+        radio.setIncreaseTheVolumeByOne(15);
         int expected = 16;
-        int actual = radio.currentVolume;
+        int actual = radio.getCurrentVolume();
         Assertions.assertEquals(expected, actual);
     }
 
     @Test
     public void maxVolume() {
         Radio radio = new Radio();
-        radio.setCurrentVolume(101);
+        radio.setIncreaseTheVolumeByOne(101);
         int expected = 100;
-        int actual = radio.currentVolume;
+        int actual = radio.getCurrentVolume();
         Assertions.assertEquals(expected, actual);
     }
 
     @Test
     public void minVolume() {
         Radio radio = new Radio();
-        radio.setReduceVolume(-1);
+        radio.setReduceTheVolumeByOne(-1);
         int expected = 0;
-        int actual = radio.currentVolume;
+        int actual = radio.getCurrentVolume();
         Assertions.assertEquals(expected, actual);
     }
 
     @Test
-    public void reduceVolume() {
+    public void reduceVolumeOne() {
         Radio radio = new Radio();
-        radio.setReduceVolume(15);
+        radio.setReduceTheVolumeByOne(15);
         int expected = 14;
-        int actual = radio.currentVolume;
+        int actual = radio.getCurrentVolume();
         Assertions.assertEquals(expected, actual);
     }
 
@@ -43,7 +43,7 @@ public class RadioTest {
         Radio radio = new Radio();
         radio.setCurrentRadioStationNumber(10);
         int expected = 0;
-        int actual = radio.currentRadioStationNumber;
+        int actual = radio.getCurrentRadioStationNumber();
         Assertions.assertEquals(expected, actual);
     }
 
@@ -52,7 +52,7 @@ public class RadioTest {
         Radio radio = new Radio();
         radio.setCurrentRadioStationNumber(-1);
         int expected = 9;
-        int actual = radio.currentRadioStationNumber;
+        int actual = radio.getCurrentRadioStationNumber();
         Assertions.assertEquals(expected, actual);
     }
 }

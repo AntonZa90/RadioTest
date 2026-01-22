@@ -1,21 +1,33 @@
 public class Radio {
-    public int currentRadioStationNumber;
-    public int currentVolume;
+    private int currentRadioStationNumber;
+    private int currentVolume;
 
 
-    public void setCurrentVolume(int newCurrentVolume) {
+    public int getCurrentVolume() {
+        return currentVolume;
+    }
+
+    public void setIncreaseTheVolumeByOne(int newCurrentVolume) {
         currentVolume = newCurrentVolume;
 
         if (currentVolume < 100) {
             currentVolume = currentVolume + 1;
-        } else currentVolume = 100;
+        } else {
+            currentVolume = 100;
+        }
     }
 
-    public void setReduceVolume(int newReduceVolume) {
+    public void setReduceTheVolumeByOne(int newReduceVolume) {
         currentVolume = newReduceVolume;
         if (currentVolume > 0) {
             currentVolume = currentVolume - 1;
-        } else currentVolume = 0;
+        } else {
+            currentVolume = 0;
+        }
+    }
+
+    public int getCurrentRadioStationNumber() {
+        return currentRadioStationNumber;
     }
 
     public void setCurrentRadioStationNumber(int newCurrentRadioStationNumber) {
@@ -23,7 +35,8 @@ public class Radio {
 
         if (currentRadioStationNumber > 9) {
             currentRadioStationNumber = 0;
-        } else currentRadioStationNumber = currentRadioStationNumber;
+        } else {currentRadioStationNumber = currentRadioStationNumber;
+            }
         if (currentRadioStationNumber < 0) {
             currentRadioStationNumber = 9;
         }
