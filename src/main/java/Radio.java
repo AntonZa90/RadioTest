@@ -30,7 +30,7 @@ public class Radio {
         return currentRadioStationNumber;
     }
 
-    public void setNext(int newCurrentRadioStationNumber) {
+    public void setSwitchingTheRadioWavesAhead(int newCurrentRadioStationNumber) {
         currentRadioStationNumber = newCurrentRadioStationNumber;
 
         if (currentRadioStationNumber > 9) {
@@ -40,7 +40,7 @@ public class Radio {
         }
     }
 
-    public void setPrev(int newCurrentRadioStationNumber) {
+    public void setSwitchingTheRadioWaveBack(int newCurrentRadioStationNumber) {
         currentRadioStationNumber = newCurrentRadioStationNumber;
 
         if (currentRadioStationNumber < 0) {

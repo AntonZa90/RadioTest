@@ -41,34 +41,34 @@ public class RadioTest {
     @Test
     public void changingTheRadioStationTo1() {
         Radio radio = new Radio();
-        radio.setNext(10);
+        radio.setSwitchingTheRadioWavesAhead(10);
         int expected = 0;
         int actual = radio.getCurrentRadioStationNumber();
         Assertions.assertEquals(expected, actual);
     }
 
     @Test
-    public void ChangingTheRadioStationToMinus1() {
+    public void changingTheRadioStationToMinus1() {
         Radio radio = new Radio();
-        radio.setPrev(-1);
+        radio.setSwitchingTheRadioWaveBack(-1);
         int expected = 9;
         int actual = radio.getCurrentRadioStationNumber();
         Assertions.assertEquals(expected, actual);
     }
 
     @Test
-    public void СhoosingARadioStationNext() {
+    public void choosingARadioStationNext() {
         Radio radio = new Radio();
-        radio.setNext(5);
+        radio.setSwitchingTheRadioWavesAhead(5);
         int expected = 5;
         int actual = radio.getCurrentRadioStationNumber();
         Assertions.assertEquals(expected, actual);
     }
 
     @Test
-    public void СhoosingARadioStationPrev() {
+    public void choosingARadioStationPrev() {
         Radio radio = new Radio();
-        radio.setPrev(5);
+        radio.setSwitchingTheRadioWaveBack(5);
         int expected = 5;
         int actual = radio.getCurrentRadioStationNumber();
         Assertions.assertEquals(expected, actual);
