@@ -41,7 +41,7 @@ public class RadioTest {
     @Test
     public void changingTheRadioStationTo1() {
         Radio radio = new Radio();
-        radio.setSwitchingTheRadioWavesAhead(10);
+        radio.next(10);
         int expected = 0;
         int actual = radio.getCurrentRadioStationNumber();
         Assertions.assertEquals(expected, actual);
@@ -50,7 +50,7 @@ public class RadioTest {
     @Test
     public void changingTheRadioStationToMinus1() {
         Radio radio = new Radio();
-        radio.setSwitchingTheRadioWaveBack(-1);
+        radio.prev(-1);
         int expected = 9;
         int actual = radio.getCurrentRadioStationNumber();
         Assertions.assertEquals(expected, actual);
@@ -59,7 +59,7 @@ public class RadioTest {
     @Test
     public void choosingARadioStationNext() {
         Radio radio = new Radio();
-        radio.setSwitchingTheRadioWavesAhead(5);
+        radio.next(5);
         int expected = 5;
         int actual = radio.getCurrentRadioStationNumber();
         Assertions.assertEquals(expected, actual);
@@ -68,7 +68,7 @@ public class RadioTest {
     @Test
     public void choosingARadioStationPrev() {
         Radio radio = new Radio();
-        radio.setSwitchingTheRadioWaveBack(5);
+        radio.prev(5);
         int expected = 5;
         int actual = radio.getCurrentRadioStationNumber();
         Assertions.assertEquals(expected, actual);
