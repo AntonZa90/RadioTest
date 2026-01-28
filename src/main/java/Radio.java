@@ -2,14 +2,23 @@ public class Radio {
     private int currentRadioStationNumber;
     private int currentVolume;
 
-
-    public int getCurrentVolume() {
-        return currentVolume;
+    public void next() {
+        if (currentRadioStationNumber != 9) {
+            currentRadioStationNumber = currentRadioStationNumber + 1;
+        } else {
+            currentRadioStationNumber = 0;
+        }
     }
 
-    public void setIncreaseTheVolumeByOne(int newCurrentVolume) {
-        currentVolume = newCurrentVolume;
+    public void prev() {
+        if (currentRadioStationNumber != 0) {
+            currentRadioStationNumber = currentRadioStationNumber - 1;
+        } else {
+            currentRadioStationNumber = 9;
+        }
+    }
 
+    public void increaseTheVolumeByOne() {
         if (currentVolume < 100) {
             currentVolume = currentVolume + 1;
         } else {
@@ -17,8 +26,7 @@ public class Radio {
         }
     }
 
-    public void setReduceTheVolumeByOne(int newReduceVolume) {
-        currentVolume = newReduceVolume;
+    public void reduceTheVolumeByOne() {
         if (currentVolume > 0) {
             currentVolume = currentVolume - 1;
         } else {
@@ -26,27 +34,33 @@ public class Radio {
         }
     }
 
+    public int getCurrentVolume() {
+        return currentVolume;
+    }
+
+    public void setCurrentVolume(int currentVolume) {
+        if (currentVolume < 0) {
+            return;
+        }
+        if (currentVolume > 100) {
+            return;
+        }
+        this.currentVolume = currentVolume;
+    }
+
     public int getCurrentRadioStationNumber() {
         return currentRadioStationNumber;
     }
 
-    public void next(int newCurrentRadioStationNumber) {
-        currentRadioStationNumber = newCurrentRadioStationNumber;
-
+    public void setCurrentRadioStationNumber(int currentRadioStationNumber) {
         if (currentRadioStationNumber > 9) {
-            currentRadioStationNumber = 0;
-        } else {
-            currentRadioStationNumber = currentRadioStationNumber;
+            return;
         }
-    }
-
-    public void prev(int newCurrentRadioStationNumber) {
-        currentRadioStationNumber = newCurrentRadioStationNumber;
-
         if (currentRadioStationNumber < 0) {
-            currentRadioStationNumber = 9;
-        } else {
-            currentRadioStationNumber = currentRadioStationNumber;
+            return;
         }
+        this.currentRadioStationNumber = currentRadioStationNumber;
     }
+
+
 }
