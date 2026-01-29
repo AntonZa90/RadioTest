@@ -1,9 +1,18 @@
 public class Radio {
     private int currentRadioStationNumber;
     private int currentVolume;
+    private int maxStation;
+
+    public Radio() {
+        this.maxStation = 9;
+    }
+
+    public Radio(int stationCount) {
+        this.maxStation = stationCount - 1;
+    }
 
     public void next() {
-        if (currentRadioStationNumber != 9) {
+        if (currentRadioStationNumber != maxStation) {
             currentRadioStationNumber = currentRadioStationNumber + 1;
         } else {
             currentRadioStationNumber = 0;
@@ -14,7 +23,7 @@ public class Radio {
         if (currentRadioStationNumber != 0) {
             currentRadioStationNumber = currentRadioStationNumber - 1;
         } else {
-            currentRadioStationNumber = 9;
+            currentRadioStationNumber = maxStation;
         }
     }
 
@@ -53,7 +62,7 @@ public class Radio {
     }
 
     public void setCurrentRadioStationNumber(int currentRadioStationNumber) {
-        if (currentRadioStationNumber > 9) {
+        if (currentRadioStationNumber > maxStation) {
             return;
         }
         if (currentRadioStationNumber < 0) {
